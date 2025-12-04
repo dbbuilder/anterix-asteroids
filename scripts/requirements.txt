@@ -1,0 +1,23 @@
+# ============================================================
+# ANTERIX SPECTRUM DEFENDER - SPRITE GENERATOR DEPENDENCIES
+# ============================================================
+# Install with: pip install -r requirements.txt
+# ============================================================
+
+# OpenAI API for DALL-E image generation
+openai>=1.0.0
+
+# Image processing and manipulation
+Pillow>=10.0.0
+
+# HTTP requests (backup for API calls)
+requests>=2.31.0
+
+# Environment variable management
+python-dotenv>=1.0.0
+
+# Progress bars for generation feedback
+tqdm>=4.66.0
+
+# Logging utilities
+colorlog>=6.7.0
