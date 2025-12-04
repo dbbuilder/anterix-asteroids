@@ -182,6 +182,34 @@
         };
 
         // ============================================================
+        // BRANDING: Query String Customization
+        // Override branding via URL parameters:
+        //   ?company=YourCompany&subtitle=Your Subtitle&tagline=Your Tagline
+        // Example: ?company=Acme Corp&subtitle=Space Wars
+        // ============================================================
+
+        const BRANDING = (() => {
+            const params = new URLSearchParams(window.location.search);
+            const config = {
+                COMPANY: params.get('company') || 'ANTERIX',
+                SUBTITLE: params.get('subtitle') || 'SPECTRUM DEFENDER',
+                TAGLINE: params.get('tagline') || 'Launch',
+                PRIMARY_COLOR: params.get('color') || null  // Optional: override UI color
+            };
+
+            // Update page title dynamically
+            document.title = `${config.COMPANY} ${config.TAGLINE}: ${config.SUBTITLE}`;
+
+            // Apply custom primary color if specified
+            if (config.PRIMARY_COLOR) {
+                CONFIG.COLORS.UI_TEXT = config.PRIMARY_COLOR;
+                CONFIG.COLORS.PLAYER = config.PRIMARY_COLOR;
+            }
+
+            return config;
+        })();
+
+        // ============================================================
         // SECTION 2: UTILITY FUNCTIONS
         // ============================================================
 
@@ -2493,11 +2521,11 @@
                 ctx.shadowBlur = 20;
                 ctx.shadowColor = CONFIG.COLORS.UI_TEXT;
                 
-                ctx.fillText('ANTERIX', CONFIG.WIDTH / 2, CONFIG.HEIGHT / 3 - 30);
-                
+                ctx.fillText(BRANDING.COMPANY, CONFIG.WIDTH / 2, CONFIG.HEIGHT / 3 - 30);
+
                 ctx.fillStyle = CONFIG.COLORS.UI_ACCENT;
                 ctx.font = 'bold 32px Courier New';
-                ctx.fillText('SPECTRUM DEFENDER', CONFIG.WIDTH / 2, CONFIG.HEIGHT / 3 + 20);
+                ctx.fillText(BRANDING.SUBTITLE, CONFIG.WIDTH / 2, CONFIG.HEIGHT / 3 + 20);
                 
                 // Draw large A ship
                 ctx.save();
