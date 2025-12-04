@@ -2,11 +2,15 @@
 
 A retro arcade game celebrating Anterix's critical telecommunications infrastructure, combining classic Asteroids and Space Invaders gameplay.
 
-![Game Preview](sprites/preview.png)
+**[Play Now](https://anterix-asteroids.vercel.app)** | [GitHub](https://github.com/dbbuilder/anterix-asteroids)
+
+![Game Preview](sprites/title_logo.png)
 
 ## 🎮 Play the Game
 
-Simply open `index.html` in a modern web browser. No installation required!
+**Live Demo:** https://anterix-asteroids.vercel.app
+
+Or open `index.html` locally in a modern web browser. No installation required!
 
 ## 🕹️ Controls
 
